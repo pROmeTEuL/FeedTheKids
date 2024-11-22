@@ -18,6 +18,13 @@ dependencies {
     implementation files('libs/jsfml.jar')
 }
 
+application {
+    mainClassName = 'com.CGD.Main'
+    if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+        applicationDefaultJvmArgs = ["-XstartOnFirstThread"]
+    }
+}
+
 test {
     useJUnitPlatform()
 }
